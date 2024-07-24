@@ -296,7 +296,12 @@
                     "securityprofile": "string*",
                     "applicationaccess": "string*",
                     "active": "string*",
-                    "employee": "string*",
+                    "employee": {
+                        "employeeNumber":"_:string*",
+                        "id":"_:string*",
+                        "name":"_:string*",
+                        "uri":"_:string"
+                    },
                     "email": "string*"
                 }
             }
@@ -317,7 +322,7 @@
                     }
                 }
             },
-            "authentication": "aeries",
+            "authentication": "basic_auth",
             "call_handling": "generic",
             "test_connection": {
                 "url": "/rest/employees"
@@ -336,11 +341,7 @@
                 {
                     "type": "connectionError"
                 }
-            ],
-            "headers": {
-                "Authorization": "Basic {client_secret}"
-            }
-            
+            ]
         }
     },
     "connection": {
