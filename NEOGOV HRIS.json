@@ -2,13 +2,12 @@
     "schema": {
         "options": {},
         "crud_objects": {
-            "departments": {
+            "classSpecifications": {
                 "operations": {
-                    "departmentsList": {
+                    "classSpecificationsList": {
                         "method": "get",
-                        "verb": "post",
                         "call": {
-                            "path": "/v1/departments"
+                            "path": "/rest/classspecifications"
                         },
                         "processing_options": {
                             "output_field": null
@@ -18,17 +17,77 @@
                     }
                 },
                 "parameters": {},
-                "key": "code",
+                "key": "id",
                 "resources": {
-                    "authArea": "string*",
-                    "batchCode": "string*",
-                    "changeReason": "string*",
+                    "id": "string*",
+                    "url": "string",
+                    "eeoid": "string*",
+                    "status": "string*",
+                    "classcode": "string*",
+                    "classtitle": "string*",
+                    "classconcept": "string*",
+                    "revisiondate": "string*",
+                    "examplesofduties": "string*",
+                    "minimumqualifications": "string*",
+                    "supplementalinfo": "string*",
+                    "flsa": "string*",
+                    "appi": "string*",
+                    "appii": "string*",
+                    "notes": "string*",
+                    "otherrequirements": "string*",
+                    "createddate": "string*",
+                    "updateddate": "string*",
+                    "topstep": "string*",
+                    "stepatentry": "string*",
+                    "salarymin": "string*",
+                    "salarymax": "string*",
+                    "noonstdrate": "string*",
+                    "rangeofsalary": "string*",
+                    "isnonstandard": "string*",
+                    "lasreviseddate": "string*",
+                    "othertitle1": "string*",
+                    "othertitle2": "string*",
+                    "jobinterestcards": "string*",
+                    "classformula": "string*",
+                    "showsalaryhourly": "string*",
+                    "showsalarydaily": "string*",
+                    "showsalarybiweekly": "string*",
+                    "showsalaryweekly": "string*",
+                    "showsalarysemimonthly": "string*",
+                    "showsalarymonthly": "string*",
+                    "showsalaryannually": "string*",
+                    "salarypaidcode": "string*",
+                    "bargainingunitcode": "string*",
+                    "billablehours": "string*",
+                    "customformfields": {
+                        "singlevaluecustomfields": ["_:string*"],
+                        "multivaluecustomfields": ["_:string*"]
+                    },
+                    "eeocode": "string*",
+                    "physicalclasscode": "string*",
+                    "ocgroupcode": "string*"
+                }
+            },
+            "departments": {
+                "operations": {
+                    "departmentsList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/rest/departments"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "id": "string*",
                     "code": "string*",
-                    "departmentHead": "string*",
-                    "distribution": "string*",
-                    "eeocFunction": "string*",
-                    "effectiveDate": "string*",
-                    "location": "string*",
+                    "url": "string",
                     "name": "string*",
                     "status": "string*"
                 }
@@ -37,9 +96,8 @@
                 "operations": {
                     "divisionsList": {
                         "method": "get",
-                        "verb": "post",
                         "call": {
-                            "path": "/v1/divisions"
+                            "path": "/rest/divisions"
                         },
                         "processing_options": {
                             "output_field": null
@@ -49,12 +107,13 @@
                     }
                 },
                 "parameters": {},
-                "key": "code",
+                "key": "id",
                 "resources": {
-                    "changeReason": "string*",
+                    "id": "string*",
                     "code": "string*",
                     "departmentCode": "string*",
-                    "effectiveDate": "string*",
+                    "departmentName": "string*",
+                    "url": "string",
                     "name": "string*",
                     "status": "string*"
                 }
@@ -63,9 +122,8 @@
                 "operations": {
                     "employeesList": {
                         "method": "get",
-                        "verb": "post",
                         "call": {
-                            "path": "/v1/employees"
+                            "path": "/rest/employees"
                         },
                         "processing_options": {
                             "output_field": null
@@ -75,48 +133,71 @@
                     }
                 },
                 "parameters": {},
-                "key": "EmployeeNumber",
+                "key": "id",
                 "resources": {
-                  "EmployeeNumber": "string*",
-                  "FirstName": "string*",
-                  "MiddleName": "string*",
-                  "LastName": "string*",
-                  "GovernmentCodeOrigin": "string*",
-                  "SocialSecurityNumber": "string*",
-                  "BirthDate": "string*",
-                  "Gender": "string*",
-                  "MaritalStatus": "string*",
-                  "Address1": "string*",
-                  "Address2": "string*",
-                  "City": "string*",
-                  "State": "string*",
-                  "Country": "string*",
-                  "Zip": "string*",
-                  "Phone": "string*",
-                  "CellPhoneNumber": "string*",
-                  "PersonalEmail": "string*",
-                  "EmploymentType": "string*",
-                  "HireDate": "string*",
-                  "PositionStartDate": "string*",
-                  "PositionCode": "string*",
-                  "FTE": "number*",
-                  "WorkEmail": "string*",
-                  "WorkPhone": "string*",
-                  "DirectManager": "string*",
-                  "SalaryRange": "string*",
-                  "Scale": "string*",
-                  "Step": "string*",
-                  "RateBasis": "string*",
-                  "WageRate": "number*"
+                    "id": "string*",
+                    "uri": "string",
+                    "active": "string*",
+                    "firstname": "string*",
+                    "lastname": "string*",
+                    "employeenumber": "string*",
+                    "email": "string*",
+                    "createddate": "string*",
+                    "evaluationcycledate": "string*",
+                    "hiredate": "string*",
+                    "updateddate": "string*",
+                    "separationdate": "string*",
+                    "address1": "string*",
+                    "address2": "string*",
+                    "city": "string*",
+                    "state": "string*",
+                    "zipcode": "string*",
+                    "phone": "string*",
+                    "employeephotourl": "string*",
+                    "user": {
+                        "id": "_:string*",
+                        "uri": "_:string",
+                        "username": "_:string*",
+                        "activeuser": "_:string*",
+                        "onlineStatus": "_:string*"
+                    },
+                    "directmanager": {
+                        "fullname": "_:string*",
+                        "id": "_:string*",
+                        "uri": "_:string"
+                    },
+                    "position": {
+                        "id": "_:string*",
+                        "uri": "_:string",
+                        "code": "_:string*",
+                        "title": "_:string*"
+                    },
+                    "department": {
+                        "id": "_:string*",
+                        "uri": "_:string",
+                        "code": "_:string*",
+                        "name": "_:string*"
+                    },
+                    "division": {
+                        "id": "_:string*",
+                        "uri": "_:string",
+                        "code": "_:string*",
+                        "name": "_:string*"
+                    },
+                    "classspecification": {
+                        "id": "_:string*",
+                        "uri": "_:string",
+                        "code": "_:string*",
+                        "title": "_:string*"
+                    }
                 }
             },
-            "jobs": {
+            "positionControl": {
                 "operations": {
                     "jobsList": {
                         "method": "get",
-                        "verb": "post",
                         "call": {
-                            "path": "/v1/jobs"
+                            "path": "/rest/positioncontrol"
                         },
                         "processing_options": {
                             "output_field": null
@@ -126,56 +207,35 @@
                     }
                 },
                 "parameters": {},
-                "key": "code",
+                "key": "positionid",
                 "resources": {
-                    "acceptClassInterestCards": "boolean*",
-                    "bargainingUnit": "string*",
-                    "benefitCode": "string*",
-                    "billableHours": "string*",
-                    "changeReason": "string*",
-                    "classConcept": "string*",
-                    "classTitle": "string*",
-                    "code": "string*",
-                    "eeoCategory": "string*",
-                    "effectiveDate": "string*",
-                    "exampleOfDuties": "string*",
-                    "flsa": "string*",
-                    "jobClass": "string*",
-                    "jobType": "string*",
-                    "maximumSalary": "string*",
-                    "minimumQualifications": "string*",
-                    "minimumSalary": "string*",
-                    "occupation": "string*",
-                    "occupationalCode": "string*",
-                    "otherRequirements": "string*",
-                    "otherTitle1": "string*",
-                    "otherTitle2": "string*",
-                    "overTimeExempt": "boolean*",
-                    "peRsReportHours": "string*",
-                    "rateBasis": "string*",
-                    "salaryRange": "string*",
-                    "scale": "string*",
-                    "showSalaryAsAnnually": "boolean*",
-                    "showSalaryAsBiweekly": "boolean*",
-                    "showSalaryAsDaily": "boolean*",
-                    "showSalaryAsHourly": "boolean*",
-                    "showSalaryAsMonthly": "boolean*",
-                    "showSalaryAsSemiMonthly": "boolean*",
-                    "showSalaryAsWeekly": "boolean*",
+                    "positionid": "string*",
+                    "url": "string",
+                    "employerid": "string*",
+                    "positioncode": "string*",
+                    "positiontitle": "string*",
+                    "jobtermcode": "string*",
+                    "departmentcode": "string*",
+                    "divisioncode": "string*",
+                    "parentpositioncode": "string*",
+                    "positionstatuscode": "string*",
+                    "bargainingunitcode": "string*",
                     "status": "string*",
-                    "step": "string*",
-                    "supplementalInfo": "string*",
-                    "vetsCategory": "string*",
-                    "workersCompCode": "string*"
+                    "standardhours": "string*",
+                    "maxheadcount": "string*",
+                    "currentheadcount": "string*",
+                    "maxfte": "string*",
+                    "currentfte": "string*",
+                    "createdate": "string*",
+                    "updatedate": "string*"
                 }
             },
             "positions": {
                 "operations": {
                     "positionsList": {
                         "method": "get",
-                        "verb": "post",
                         "call": {
-                            "path": "/v1/positions"
+                            "path": "/rest/position"
                         },
                         "processing_options": {
                             "output_field": null
@@ -185,39 +245,59 @@
                     }
                 },
                 "parameters": {},
-                "key": "code",
+                "key": "id",
                 "resources": {
-                    "assignmentRequired": "boolean*",
-                    "authArea": "string*",
-                    "authorizedFTE": "string*",
-                    "bargainingUnit": "string*",
-                    "changeReason": "string*",
-                    "classCode": "string*",
+                    "id": "string",
+                    "url": "string",
+                    "active": "string*",
                     "code": "string*",
-                    "defaultFTE": "string*",
-                    "departmentCode": "string*",
-                    "divisionCode": "string*",
-                    "effectiveDate": "string*",
-                    "fteOverride": "string*",
-                    "fullTimeWage": "boolean*",
-                    "group": "string*",
-                    "location": "string*",
-                    "overTimeExempt": "boolean*",
-                    "peRsReportHours": "string*",
-                    "positionDescription": "string*",
-                    "positionTitle": "string*",
-                    "positionType": "string*",
-                    "rateBasis": "string*",
-                    "responsibilityLevel": "string*",
-                    "salaryRange": "string*",
-                    "scale": "string*",
-                    "status": "string*",
-                    "stdHrsDay": "string*",
-                    "stdHrsPayPeriod": "string*",
-                    "stdHrsWeek": "string*",
-                    "step": "string*",
-                    "wageRate": "string*",
-                    "workRule": "string*"
+                    "title": "string*",
+                    "description": "string*",
+                    "maxFTE": "string*",
+                    "currentFTE": "string*",
+                    "department": {
+                        "name": "_:string",
+                        "code": "_:string",
+                        "uri": "_:string"
+                    },
+                    "division": {
+                        "name": "_:string",
+                        "code": "_:string",
+                        "uri": "_:string"
+                    },
+                    "classSpecification": {
+                        "code": "_:string*",
+                        "title": "_:string*",
+                        "uri": "_:string"
+                    },
+                    "clientId": "string*"
+                }
+            },
+            "users": {
+                "operations": {
+                    "usersList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/rest/users"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "id": "string*",
+                    "uri": "string",
+                    "username": "string*",
+                    "securityprofile": "string*",
+                    "applicationaccess": "string*",
+                    "active": "string*",
+                    "employee": "string*",
+                    "email": "string*"
                 }
             }
         }
@@ -227,12 +307,20 @@
             "baseUrl": "https://api.neogov.com",
             "get": {
                 "query_parameters": {
+                },
+                "pagination":{
+                    "mode":"generic",
+                    "path":[],
+                    "params":{
+                        "pagenumber":"{page_number}",
+                        "perpage":"{page_size}"
+                    }
                 }
             },
-            "authentication": "basic_auth",
+            "authentication": "aeries",
             "call_handling": "generic",
             "test_connection": {
-                "url": "/v1/countries"
+                "url": "/rest/employees"
             },
             "accept": "application/json",
             "retry": [
@@ -248,11 +336,21 @@
                 {
                     "type": "connectionError"
                 }
-            ]
+            ],
+            "headers": {
+                "Authorization": "Basic {client_secret}"
+            }
+            
         }
     },
     "connection": {
         "items": [
+            {
+                "name": "page_size",
+                "type": "textbox",
+                "label": "Page Size:",
+                "value": "100"
+            }
         ]
     }
 }
